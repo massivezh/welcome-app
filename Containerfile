@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/php-73:latest
+FROM php:7.3-alpine3.14
 
 USER root
 
