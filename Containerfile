@@ -1,17 +1,8 @@
 FROM php:7.3-alpine3.14
+COPY . /usr/src/myapp
 
-USER root
+RUN rm -f /usr/src/myapp/{Containerfile,README.md} 
 
-COPY . /tmp/src
-
-RUN rm -f /tmp/src/{Containerfile,README.md} && \
-    chown -R 1001:0 /tmp/src && \
-    chmod -R g+w /tmp/src
-
-USER 1001
-
-EXPOSE 8080
-
-RUN /usr/libexec/s2i/assemble
-
-CMD /usr/libexec/s2i/run
+WORKDIR /usr/src/myapp
+EXPOSE 80
+CMD [ "php", "./index.php" ]
