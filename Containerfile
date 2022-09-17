@@ -1,8 +1,4 @@
-FROM php:7.3-alpine3.14
-COPY . /usr/src/myapp
-
-RUN rm -f /usr/src/myapp/{Containerfile,README.md} 
-
-WORKDIR /usr/src/myapp
+FROM php:7.2-apache
+COPY . /var/www/html/
 EXPOSE 80
-CMD [ "php", "./index.php" ]
+RUN rm -f /var/www/html/{Containerfile,README.md} 
