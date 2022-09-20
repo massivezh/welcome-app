@@ -34,5 +34,6 @@ user@host$ oc scale --replicas=3 dc/welcome-app
 If you'd like to add another route (aka "alias"); then you need to specify a new name for it
 
 ```
+===
 user@host$ oc expose svc welcome-app --name=hello-openshift --hostname=hello-openshift.cloudapps.example.com
 ```
