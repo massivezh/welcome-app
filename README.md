@@ -37,3 +37,4 @@ If you'd like to add another route (aka "alias"); then you need to specify a new
 ===
 user@host$ oc expose svc welcome-app --name=hello-openshift --hostname=hello-openshift.cloudapps.example.com
 ```
+===
